@@ -1,2 +1,35 @@
 title: Stefano Racioppi: About Me
+description: >- 
+  Personal website of Stefano Racioppi.
+  A hub for research, projects, and writings.
+
+# Theme configuration
 theme: jekyll-theme-minimal
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Optional: Custom configurations
+# Uncomment and customize if needed
+# url: "https://yourusername.github.io"
+# baseurl: ""
+
+# Optional: Navigation (if you create pages)
+# nav:
+#   - title: About
+#     url: /about/
+#   - title: Projects
+#     url: /projects/
+#   - title: Publications
+#     url: /publications/
+
+# Optional: Author info
+author:
+  name: Stefano Racioppi
+  email: your_email@example.com
+
+# Optional: Plugins (GitHub Pages supports a limited set)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
