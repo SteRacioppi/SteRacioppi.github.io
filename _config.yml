@@ -1,5 +1,5 @@
 title: "Stefano Racioppi: About Me"
-description: >- 
+description: >-
   Welcome! My name is Stefano Racioppi, and this is my homepage.
   I am a computational and theoretical chemist specializing in condensed matter chemistry and physics under extreme conditions (high pressure and high temperature, HPTP).
 
@@ -8,12 +8,14 @@ theme: jekyll-theme-minimal
 markdown: kramdown
 highlighter: rouge
 
-
 author:
   name: Stefano Racioppi
   email: sraciopp@buffalo.edu
-  alt_email: stefanorac@hotmai.it
-
+  alt_email: stefanorac@hotmail.it
+  linkedin: https://www.linkedin.com/in/stefano-racioppi-phd-a04970163/
+  orcid: https://orcid.org/0000-0002-4174-1732
+  github: https://github.com/SteRacioppi
+  
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
