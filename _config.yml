@@ -1,4 +1,4 @@
-title: Stefano Racioppi: About Me
+title: "Stefano Racioppi: About Me"
 description: >- 
   Personal website of Stefano Racioppi.
   A hub for research, projects, and writings.
@@ -12,7 +12,7 @@ highlighter: rouge
 author:
   name: Stefano Racioppi
   email: sraciopp@buffalo.edu
-  email: stefanorac@hotmai.it
+  alt_email: stefanorac@hotmai.it
 
 plugins:
   - jekyll-feed
