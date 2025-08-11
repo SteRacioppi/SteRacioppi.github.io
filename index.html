@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stefano Racioppi</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    #container {
+      max-width: 700px;
+      padding: 2rem;
+      width: 100%;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #ccc;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:hover {
+      color: #007acc;
+    }
+    main section {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .social-links {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.5rem;
+      vertical-align: middle;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #007acc;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+  <!-- Add FontAwesome CDN for social icons -->
+  <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
 </head>
 <body>
   <div id="container">
     <header>
+      <img src="assets/img/StefanoRacioppi.jpg" alt="Stefano Racioppi" />
       <h1>Stefano Racioppi</h1>
     </header>
     <nav>
@@ -23,12 +102,36 @@
       <section>
         <h2>Welcome!</h2>
         <p>
-          My name is <strong>Stefano Racioppi</strong> and this is my homepage.  
-          I am a computational and theoretical chemist specializing in  
-          condensed matter chemistry and physics under extreme conditions  
-          (high-pressure and high-temperature, HPTP).
+          My name is <strong>Stefano Racioppi</strong> and this is my homepage.
+          I am a computational and theoretical chemist specializing in condensed
+          matter chemistry and physics under extreme conditions (high-pressure
+          and high-temperature, HPTP).
         </p>
       </section>
+
+      <div class="social-links" aria-label="Social media links">
+        <a
+          href="https://www.linkedin.com/in/stefano-racioppi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://orcid.org/0000-0000-0000-0000"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="ORCID"
+          ><i class="fab fa-orcid"></i
+        ></a>
+        <a
+          href="https://github.com/SteRacioppi"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
     </main>
     <footer>
       <p>&copy; 2025 Stefano Racioppi</p>
