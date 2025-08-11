@@ -60,7 +60,7 @@
       font-size: 1.1rem;
       line-height: 1.5;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 1.5rem;
     }
     footer {
       text-align: center;
@@ -99,6 +99,59 @@
       fill: white;
       margin-top: 7px;
     }
+    /* Modal Styles */
+    #resourcesModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      align-items: center;
+      justify-content: center;
+    }
+    #resourcesModalContent {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+    #resourcesModalContent h2 {
+      margin-top: 0;
+    }
+    #resourcesModalContent ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+    }
+    #resourcesModalContent li {
+      margin: 12px 0;
+    }
+    #resourcesModalContent a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    #resourcesModalContent a:hover {
+      text-decoration: underline;
+    }
+    #resourcesModalClose {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+    }
+    #resourcesModalClose:hover {
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -110,7 +163,7 @@
       <ul>
         <li><a href="research.html">Research</a></li>
         <li><a href="news.html">News</a></li>
-        <li><a href="#" onclick="openResourcesPopup(); return false;">Resources</a></li>
+        <li><a href="#" id="openResourcesBtn">Resources</a></li>
       </ul>
     </nav>
 
@@ -120,22 +173,31 @@
         <p>
           Welcome! My name is <strong>Stefano Racioppi</strong>, and this is my
           homepage. I am a computational and theoretical chemist specializing in
-          condensed matter chemistry and physics under extreme conditions
-          (high pressure and high temperature, HPTP).
+          condensed matter chemistry and physics under extreme conditions.
         </p>
 
         <ul class="social-icons" aria-label="Social media and contact links">
+          <!-- Buffalo.edu email -->
           <li>
-            <a href="mailto:sraciopp@buffalo.edu" aria-label="Email Stefano Racioppi">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 8l7.5 4.5L19 8v10H5V8zm7.5 3L4 6h16l-7.5 5z"
-                />
+            <a href="mailto:sraciopp@buffalo.edu" aria-label="Email Stefano Racioppi at Buffalo.edu" title="Email Buffalo.edu">
+              <!-- Envelope icon with university style -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 8l8 5 8-5v-2l-8 5-8-5v2z"/>
               </svg>
             </a>
           </li>
+          <!-- Hotmail.it email -->
           <li>
-            <a href="https://linkedin.com/in/stefanoracioppi" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a href="mailto:stefanorac@hotmail.it" aria-label="Email Stefano Racioppi at Hotmail.it" title="Email Hotmail.it">
+              <!-- Outlook envelope style icon in blue -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path d="M22 6v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-11 7l-7-5v10h14V8l-7 5z"/>
+              </svg>
+            </a>
+          </li>
+          <!-- LinkedIn -->
+          <li>
+            <a href="https://linkedin.com/in/stefanoracioppi" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75S5.53 5.22 6.5 5.22s1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.07-.02-2.45-1.5-2.45s-1.75 1.18-1.75 2.38v4.57h-3v-9h2.88v1.22h.04c.4-.76 1.38-1.56 2.83-1.56 3.03 0 3.59 2 3.59 4.59v4.75z"
@@ -143,8 +205,9 @@
               </svg>
             </a>
           </li>
+          <!-- GitHub -->
           <li>
-            <a href="https://github.com/SteRacioppi" target="_blank" rel="noopener" aria-label="GitHub">
+            <a href="https://github.com/SteRacioppi" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.385-1.333-1.753-1.333-1.753-1.09-.745.082-.73.082-.73 1.205.086 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.107-.776.42-1.305.763-1.605-2.665-.3-5.467-1.333-5.467-5.93 0-1.31.47-2.38 1.236-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.398 3-.404 1.02.006 2.043.138 3 .404 2.29-1.552 3.295-1.23 3.295-1.23.655 1.653.243 2.873.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.807 5.625-5.48 5.922.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"
@@ -152,13 +215,23 @@
               </svg>
             </a>
           </li>
+          <!-- Google Scholar -->
           <li>
-            <a href="https://scholar.google.com/citations?user=8oTSpl0AAAAJ&hl=it" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=8oTSpl0AAAAJ&hl=it" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#4285F4">
                 <title>Google Scholar</title>
                 <path
                   d="M21 2v20H3V2h18m-3 9.5c0-2.43-1.25-4.5-3.75-4.5-2.14 0-3.65 1.2-3.65 3.58 0 3.13 5.4 5.5 7.4 5.5-.07-.64-.12-1.9-.12-2.59 0-1.05-.13-1.99-.18-2zM6 15V9h3v6H6z"
                 />
+              </svg>
+            </a>
+          </li>
+          <!-- ORCID -->
+          <li>
+            <a href="https://orcid.org/0000-0002-4174-1732" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <circle fill="#A6CE39" cx="12" cy="12" r="12"/>
+                <path fill="#fff" d="M15.3 8.3c-.5-.4-1-.6-1.6-.6-1.3 0-2.4 1-2.4 2.4 0 1.3 1 2.4 2.4 2.4.6 0 1.2-.3 1.6-.6v.4h1.3v-4h-1.3v.4zM13 10c0-.4.3-.7.7-.7.4 0 .7.3.7.7s-.3.7-.7.7c-.4 0-.7-.3-.7-.7zm-1.4 1.9v.8h-1v-4H11v.9c.4-.6 1-1 1.6-1 1.3 0 2.4 1 2.4 2.4 0 1.2-.9 2.3-2 2.4z"/>
               </svg>
             </a>
           </li>
@@ -171,39 +244,51 @@
     </footer>
   </div>
 
+  <!-- Resources Modal -->
+  <div id="resourcesModal" role="dialog" aria-modal="true" aria-labelledby="resourcesTitle">
+    <div id="resourcesModalContent">
+      <span id="resourcesModalClose" aria-label="Close resources menu" role="button" tabindex="0">&times;</span>
+      <h2 id="resourcesTitle">Resources</h2>
+      <ul>
+        <li><a href="curriculum-vitae.html">Curriculum Vitae</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="outreach.html">Outreach</a></li>
+        <li><a href="codes.html">Codes</a></li>
+      </ul>
+    </div>
+  </div>
+
   <script>
-    function openResourcesPopup() {
-      const popup = window.open(
-        "",
-        "Resources",
-        "width=400,height=300,resizable=yes,scrollbars=yes"
-      );
-      popup.document.write(`
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <title>Resources - Stefano Racioppi</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 20px; }
-          ul { list-style-type: none; padding: 0; }
-          li { margin: 10px 0; }
-          a { text-decoration: none; color: #007acc; font-weight: 600; }
-          a:hover { text-decoration: underline; }
-        </style>
-      </head>
-      <body>
-        <h1>Resources</h1>
-        <ul>
-          <li><a href="curriculum-vitae.html" target="_blank">Curriculum Vitae</a></li>
-          <li><a href="publications.html" target="_blank">Publications</a></li>
-          <li><a href="outreach.html" target="_blank">Outreach</a></li>
-          <li><a href="codes.html" target="_blank">Codes</a></li>
-        </ul>
-      </body>
-      </html>
-      `);
-      popup.document.close();
-    }
+    const resourcesModal = document.getElementById("resourcesModal");
+    const openResourcesBtn = document.getElementById("openResourcesBtn");
+    const closeResourcesBtn = document.getElementById("resourcesModalClose");
+
+    openResourcesBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      resourcesModal.style.display = "flex";
+      resourcesModal.querySelector('a').focus();
+    });
+
+    closeResourcesBtn.addEventListener("click", () => {
+      resourcesModal.style.display = "none";
+      openResourcesBtn.focus();
+    });
+
+    // Close modal on clicking outside the content box
+    resourcesModal.addEventListener("click", (e) => {
+      if (e.target === resourcesModal) {
+        resourcesModal.style.display = "none";
+        openResourcesBtn.focus();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && resourcesModal.style.display === "flex") {
+        resourcesModal.style.display = "none";
+        openResourcesBtn.focus();
+      }
+    });
   </script>
 </body>
 </html>
