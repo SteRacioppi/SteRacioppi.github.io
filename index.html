@@ -53,22 +53,34 @@
     main section {
       line-height: 1.6;
       font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
-    .social-links {
-      margin-top: 2rem;
-      text-align: center;
+    .tokens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
     }
-    .social-links a {
-      margin: 0 0.5rem;
-      display: inline-block;
-      color: #333;
+    .token {
+      display: inline-flex;
+      align-items: center;
+      background-color: #007acc;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 1.5rem;
-      vertical-align: middle;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease;
+      user-select: none;
     }
-    .social-links a:hover {
-      color: #007acc;
+    .token:hover {
+      background-color: #005f99;
+    }
+    .token i {
+      margin-right: 0.4rem;
+      font-size: 1rem;
     }
     footer {
       text-align: center;
@@ -77,7 +89,7 @@
       color: #666;
     }
   </style>
-  <!-- Add FontAwesome CDN for social icons -->
+  <!-- FontAwesome CDN for icons -->
   <script
     src="https://kit.fontawesome.com/a076d05399.js"
     crossorigin="anonymous"
@@ -95,7 +107,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Research</a></li>
         <li><a href="#">Publications</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">News and Resources</a></li>
       </ul>
     </nav>
     <main>
@@ -109,29 +121,33 @@
         </p>
       </section>
 
-      <div class="social-links" aria-label="Social media links">
-        <a
-          href="https://www.linkedin.com/in/stefano-racioppi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          href="https://orcid.org/0000-0000-0000-0000"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="ORCID"
-          ><i class="fab fa-orcid"></i
-        ></a>
-        <a
-          href="https://github.com/SteRacioppi"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-          ><i class="fab fa-github"></i
-        ></a>
-      </div>
+      <section>
+        <h2>News and Resources</h2>
+        <p>
+          <!-- You can add news or links here -->
+          Check back here soon for updates on my research, publications, and other resources.
+        </p>
+      </section>
+
+      <section>
+        <div class="tokens" aria-label="Contact and social links">
+          <a class="token" href="mailto:sraciopp@buffalo.edu" title="Email Buffalo">
+            <i class="fas fa-envelope"></i>sraciopp@buffalo.edu
+          </a>
+          <a class="token" href="mailto:stefanorac@hotmail.it" title="Email Hotmail">
+            <i class="fas fa-envelope"></i>stefanorac@hotmail.it
+          </a>
+          <a class="token" href="https://www.linkedin.com/in/stefano-racioppi-phd-a04970163/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>LinkedIn
+          </a>
+          <a class="token" href="https://orcid.org/0000-0002-4174-1732" target="_blank" rel="noopener noreferrer" title="ORCID">
+            <i class="fab fa-orcid"></i>ORCID
+          </a>
+          <a class="token" href="https://github.com/SteRacioppi" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <i class="fab fa-github"></i>GitHub
+          </a>
+        </div>
+      </section>
     </main>
     <footer>
       <p>&copy; 2025 Stefano Racioppi</p>
