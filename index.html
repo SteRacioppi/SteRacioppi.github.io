@@ -51,10 +51,13 @@
       padding: 0 1rem 2rem;
     }
     main section img {
-      max-width: 150px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
       border-radius: 50%;
       margin: 1rem 0 1.5rem;
       border: 3px solid #007acc;
+      display: inline-block;
     }
     main section p {
       font-size: 1.1rem;
@@ -79,37 +82,42 @@
       list-style: none;
     }
     .social-icons a {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 32px;
       height: 32px;
       border-radius: 50%;
       background: #007acc;
       color: white;
       text-align: center;
-      line-height: 32px;
       transition: background 0.3s ease;
     }
     .social-icons a:hover {
       background: #005fa3;
     }
+    /* SVG icons */
     .social-icons svg {
-      vertical-align: middle;
       width: 18px;
       height: 18px;
       fill: white;
-      margin-top: 7px;
+      /* remove margin-top and vertical-align since using flexbox */
+      margin: 0;
+      vertical-align: unset;
     }
+    /* UB logo img in social icon */
     .social-icons a img {
-  display: inline-block;
-  vertical-align: middle;
-  width: 18px;
-  height: 18px;
-  margin-top: 7px;
-  border-radius: 50%;
-  background-color: #007acc;
-  padding: 4px;
-  box-sizing: content-box;
-}
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      border-radius: 50%;
+      background-color: transparent; /* or #007acc if you want a blue circle behind */
+      /* remove padding to avoid size overflow */
+      padding: 0;
+      /* center with flexbox parent */
+      display: block;
+    }
+
     /* Modal Styles */
     #resourcesModal {
       display: none;
@@ -197,7 +205,6 @@
           <!-- Hotmail.it email -->
           <li>
             <a href="mailto:stefanorac@hotmail.it" aria-label="Email Stefano Racioppi at Hotmail.it" title="Email Hotmail.it">
-              <!-- Outlook envelope style icon in blue -->
               <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
                 <path d="M22 6v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-11 7l-7-5v10h14V8l-7 5z"/>
               </svg>
@@ -282,7 +289,6 @@
       openResourcesBtn.focus();
     });
 
-    // Close modal on clicking outside the content box
     resourcesModal.addEventListener("click", (e) => {
       if (e.target === resourcesModal) {
         resourcesModal.style.display = "none";
@@ -290,7 +296,6 @@
       }
     });
 
-    // Close modal with Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && resourcesModal.style.display === "flex") {
         resourcesModal.style.display = "none";
