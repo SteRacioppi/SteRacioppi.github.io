@@ -46,6 +46,7 @@
     nav a {
       text-decoration: none;
       color: #333;
+      cursor: pointer;
     }
     nav a:hover {
       color: #007acc;
@@ -88,6 +89,60 @@
       font-size: 0.9rem;
       color: #666;
     }
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      font-size: 1rem;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .modal-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .modal-content ul li {
+      margin-bottom: 1rem;
+    }
+    .modal-content ul li a {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .modal-content ul li a:hover {
+      text-decoration: underline;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
   </style>
   <!-- FontAwesome CDN for icons -->
   <script
@@ -107,7 +162,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Research</a></li>
         <li><a href="#">Publications</a></li>
-        <li><a href="#">News and Resources</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a id="openModal" tabindex="0">Resources</a></li>
       </ul>
     </nav>
     <main>
@@ -122,14 +178,6 @@
       </section>
 
       <section>
-        <h2>News and Resources</h2>
-        <p>
-          <!-- You can add news or links here -->
-          Check back here soon for updates on my research, publications, and other resources.
-        </p>
-      </section>
-
-      <section>
         <div class="tokens" aria-label="Contact and social links">
           <a class="token" href="mailto:sraciopp@buffalo.edu" title="Email Buffalo">
             <i class="fas fa-envelope"></i>sraciopp@buffalo.edu
@@ -137,10 +185,10 @@
           <a class="token" href="mailto:stefanorac@hotmail.it" title="Email Hotmail">
             <i class="fas fa-envelope"></i>stefanorac@hotmail.it
           </a>
-          <a class="token" href="https://www.linkedin.com/in/stefano-racioppi-phd-a04970163/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <a class="token" href="https://www.linkedin.com/in/stefano-racioppi/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <i class="fab fa-linkedin"></i>LinkedIn
           </a>
-          <a class="token" href="https://orcid.org/0000-0002-4174-1732" target="_blank" rel="noopener noreferrer" title="ORCID">
+          <a class="token" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener noreferrer" title="ORCID">
             <i class="fab fa-orcid"></i>ORCID
           </a>
           <a class="token" href="https://github.com/SteRacioppi" target="_blank" rel="noopener noreferrer" title="GitHub">
@@ -153,5 +201,58 @@
       <p>&copy; 2025 Stefano Racioppi</p>
     </footer>
   </div>
+
+  <!-- Modal markup -->
+  <div id="resourcesModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="modalTitle">Resources</h3>
+      <ul>
+        <li><a href="curriculum-vitae.html" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></li>
+        <li><a href="publications.html" target="_blank" rel="noopener noreferrer">Publications</a></li>
+        <li><a href="outreach.html" target="_blank" rel="noopener noreferrer">Outreach</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Modal open/close functionality
+    const modal = document.getElementById('resourcesModal');
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = modal.querySelector('.close-btn');
+
+    openBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+    });
+    openBtn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Close modal on ESC key
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
 </body>
 </html>
