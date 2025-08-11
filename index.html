@@ -71,7 +71,6 @@
       color: #666;
       font-size: 0.9rem;
     }
-    /* Social icon list */
     .social-icons {
       display: flex;
       justify-content: center;
@@ -96,29 +95,23 @@
     .social-icons a:hover {
       background: #005fa3;
     }
-    /* SVG icons */
     .social-icons svg {
       width: 18px;
       height: 18px;
       fill: white;
-      /* remove margin-top and vertical-align since using flexbox */
       margin: 0;
       vertical-align: unset;
     }
-    /* UB logo img in social icon */
     .social-icons a img {
       width: 18px;
       height: 18px;
       object-fit: contain;
-      border-radius: 50%;
-      background-color: transparent; /* or #007acc if you want a blue circle behind */
-      /* remove padding to avoid size overflow */
+      border-radius: 0%;
+      background-color: transparent;
       padding: 0;
-      /* center with flexbox parent */
       display: block;
     }
 
-    /* Modal Styles */
     #resourcesModal {
       display: none;
       position: fixed;
