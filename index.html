@@ -1,11 +1,17 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stefano Racioppi</title>
   <link rel="stylesheet" href="style.css" />
+
   <style>
+    :root {
+      --main-color: #0D6554;
+      --main-color-dark: #09493d;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -14,6 +20,7 @@
       background: #f9f9f9;
       color: #333;
     }
+
     #container {
       max-width: 850px;
       margin: 2rem auto;
@@ -22,13 +29,16 @@
       box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
       border-radius: 6px;
     }
+
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
     }
+
     header h1 {
       margin-bottom: 0.25rem;
     }
+
     nav ul {
       display: flex;
       justify-content: center;
@@ -37,19 +47,23 @@
       margin: 1rem 0 2rem;
       gap: 2rem;
     }
+
     nav ul li a {
       text-decoration: none;
-      color: #007acc;
+      color: var(--main-color);
       font-weight: 600;
       cursor: pointer;
     }
+
     nav ul li a:hover {
       text-decoration: underline;
     }
+
     main section {
       text-align: center;
       padding: 0 1rem 2rem;
     }
+
     main section img {
       width: 150px;
       height: 150px;
@@ -60,30 +74,37 @@
       transition: box-shadow 0.3s ease;
       display: inline-block;
     }
+
     main section img:hover {
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
     }
+
     main section p {
       font-size: 1.1rem;
       line-height: 1.5;
       max-width: 600px;
       margin: 0 auto 1.5rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem 0 2rem;
       color: #666;
       font-size: 0.9rem;
     }
+
     .social-icons {
       display: flex;
       justify-content: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
+      padding-left: 0;
     }
+
     .social-icons li {
       list-style: none;
     }
+
     .social-icons a {
       display: flex;
       align-items: center;
@@ -91,14 +112,16 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: #007acc;
+      background: var(--main-color);
       color: white;
       text-align: center;
       transition: background 0.3s ease;
     }
+
     .social-icons a:hover {
-      background: #005fa3;
+      background: var(--main-color-dark);
     }
+
     .social-icons svg {
       width: 18px;
       height: 18px;
@@ -106,12 +129,13 @@
       margin: 0;
       vertical-align: unset;
     }
+
     .social-icons a img {
       width: 18px;
       height: 18px;
       object-fit: fill;
       border-radius: 50%;
-      background-color: #007acc;
+      background-color: var(--main-color);
       padding: 0;
       display: block;
     }
@@ -120,12 +144,15 @@
       display: none;
       position: fixed;
       z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
       background-color: rgba(0,0,0,0.4);
       align-items: center;
       justify-content: center;
     }
+
     #resourcesModalContent {
       background: white;
       padding: 20px 30px;
@@ -136,26 +163,33 @@
       position: relative;
       font-family: Arial, sans-serif;
     }
+
     #resourcesModalContent h2 {
       margin-top: 0;
+      color: var(--main-color);
     }
+
     #resourcesModalContent ul {
       list-style-type: none;
       padding: 0;
       margin: 1rem 0 0 0;
     }
+
     #resourcesModalContent li {
       margin: 12px 0;
     }
+
     #resourcesModalContent a {
       text-decoration: none;
-      color: #007acc;
+      color: var(--main-color);
       font-weight: 600;
       font-size: 1.1rem;
     }
+
     #resourcesModalContent a:hover {
       text-decoration: underline;
     }
+
     #resourcesModalClose {
       position: absolute;
       top: 8px;
@@ -165,16 +199,19 @@
       color: #555;
       cursor: pointer;
     }
+
     #resourcesModalClose:hover {
       color: #000;
     }
   </style>
 </head>
+
 <body>
   <div id="container">
     <header>
       <h1>Stefano Racioppi</h1>
     </header>
+
     <nav>
       <ul>
         <li><a href="research.html">Research</a></li>
@@ -187,26 +224,28 @@
     <main>
       <section>
         <img src="assets/img/StefanoRacioppi.jpg" alt="Stefano Racioppi" />
+
         <p>
-          Welcome! My name is <strong>Stefano Racioppi</strong>, I am a Research Associate at the University of Cambridge, Department of Materials Science and Metallurgy,
-          and this is my homepage. I am a computational and theoretical chemist specializing in
-          condensed matter chemistry and physics under extreme conditions.
+          Welcome! My name is <strong>Stefano Racioppi</strong>, I am a Research
+          Associate at the University of Cambridge, Department of Materials Science
+          and Metallurgy, and this is my homepage. I am a computational and
+          theoretical chemist specializing in condensed matter chemistry and physics
+          under extreme conditions.
         </p>
 
         <ul class="social-icons" aria-label="Social media and contact links">
-          <!-- cam.ac.uk email -->
           <li>
             <a href="mailto:sr2200@cam.ac.uk" aria-label="Email Stefano Racioppi at cam.ac.uk" title="Email cam.ac.uk">
               <img src="assets/img/ucam_small.jpg" alt="Cambridge University logo" />
             </a>
           </li>
-          <!-- Buffalo.edu email -->
+
           <li>
             <a href="mailto:sraciopp@buffalo.edu" aria-label="Email Stefano Racioppi at Buffalo.edu" title="Email Buffalo.edu">
               <img src="assets/img/UB_logo.jpg" alt="University at Buffalo logo" />
             </a>
           </li>
-          <!-- Hotmail.it email -->
+
           <li>
             <a href="mailto:stefanorac@hotmail.it" aria-label="Email Stefano Racioppi at Hotmail.it" title="Email Hotmail.it">
               <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
@@ -214,7 +253,7 @@
               </svg>
             </a>
           </li>
-          <!-- LinkedIn -->
+
           <li>
             <a href="https://www.linkedin.com/in/stefano-racioppi-phd-a04970163/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -224,7 +263,7 @@
               </svg>
             </a>
           </li>
-          <!-- GitHub -->
+
           <li>
             <a href="https://github.com/SteRacioppi" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -234,7 +273,7 @@
               </svg>
             </a>
           </li>
-          <!-- Google Scholar -->
+
           <li>
             <a href="https://scholar.google.com/citations?user=8oTSpl0AAAAJ&hl=it" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#4285F4">
@@ -245,7 +284,7 @@
               </svg>
             </a>
           </li>
-          <!-- ORCID -->
+
           <li>
             <a href="https://orcid.org/0000-0002-4174-1732" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
               <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
@@ -263,11 +302,12 @@
     </footer>
   </div>
 
-  <!-- Resources Modal -->
   <div id="resourcesModal" role="dialog" aria-modal="true" aria-labelledby="resourcesTitle">
     <div id="resourcesModalContent">
       <span id="resourcesModalClose" aria-label="Close resources menu" role="button" tabindex="0">&times;</span>
+
       <h2 id="resourcesTitle">Resources</h2>
+
       <ul>
         <li><a href="CV_StefanoRacioppi.pdf" download>Curriculum Vitae</a></li>
         <li><a href="codes.html">Codes</a></li>
@@ -283,7 +323,7 @@
     openResourcesBtn.addEventListener("click", (e) => {
       e.preventDefault();
       resourcesModal.style.display = "flex";
-      resourcesModal.querySelector('a').focus();
+      resourcesModal.querySelector("a").focus();
     });
 
     closeResourcesBtn.addEventListener("click", () => {
