@@ -3,30 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>News - Stefano Racioppi</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --main-color: #0D6554;
+      --main-color-dark: #09493d;
+    }
+
+    nav ul li a {
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    header h1 {
+      color: var(--main-color);
+    }
+
+    main section {
+      line-height: 1.6;
+    }
+
+    .news-item {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .news-date {
+      color: #777;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .news-title {
+      color: var(--main-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .news-title a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    .news-title a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
+
   <div id="container">
+
     <header>
-      <h1>News</h1>
+      <h1>News & Outreach</h1>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
+
       <section>
-        <p>Welcome to the News page. Here you can post updates, announcements, and recent activities.</p>
+
+        <p>
+          Updates on publications, conferences, invited talks, outreach activities,
+          and research highlights.
+        </p>
+
       </section>
+
+      <!-- Example News Entry -->
+
+      <!--
+      <section class="news-item">
+
+        <div class="news-date">
+          May 2026
+        </div>
+
+        <h2 class="news-title">
+          Title of the news
+        </h2>
+
+        <p>
+          Short description of the update, publication, conference participation,
+          outreach activity, or announcement.
+        </p>
+
+      </section>
+      -->
+
     </main>
+
     <footer>
       <p>&copy; 2025 Stefano Racioppi</p>
     </footer>
+
   </div>
+
 </body>
 </html>
-
-
-
