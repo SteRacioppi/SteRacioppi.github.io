@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research - Stefano Racioppi</title>
+
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -22,15 +23,18 @@
 
     .research-item {
       margin: 1.5rem 0;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1rem;
     }
 
     .research-title {
       cursor: pointer;
       user-select: none;
+      transition: color 0.2s ease;
     }
 
     .research-title:hover {
-      text-decoration: underline;
+      color: #005f99;
     }
 
     .research-description {
@@ -41,19 +45,40 @@
     }
 
     .research-description.open {
-      max-height: 500px;
+      max-height: 2000px;
       opacity: 1;
     }
 
     .research-description p {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
+      margin-top: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .research-description ul {
+      margin-top: 1rem;
+      padding-left: 1.3rem;
+    }
+
+    .research-description li {
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .research-description a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .research-description a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
+
   <div id="container">
+
     <header>
       <nav>
         <ul>
@@ -65,6 +90,7 @@
     </header>
 
     <main>
+
       <section>
         <p>
           My research focuses on condensed matter chemistry and physics under
@@ -73,9 +99,14 @@
         </p>
       </section>
 
+      <!-- ELECTRIDES -->
+
       <section class="research-item">
+
         <h2 class="research-title">Electrides</h2>
+
         <div class="research-description">
+
           <p>
             My research on electrides focuses on understanding how electrons localize
             in interstitial regions of compressed materials.
@@ -86,12 +117,53 @@
             functional materials for catalysis, superconductivity, and energy
             applications.
           </p>
+
+          <ul>
+
+            <li>
+              Storm, C. V.; Racioppi, S.; Duff, M. J.; McHardy, J. D.;
+              Zurek, E.; McMahon, M. I.
+              Experimental Evidence of Interstitial Electron Density in Transparent Dense Sodium.
+              <em>Commun. Mater.</em>, 2025, 6, 201.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Racioppi, S.; Zurek, E.
+              High-Pressure Electrides: A Quantum Chemical Perspective.
+              <em>Annu. Rev. Mater. Res.</em>, 2025, 55, 421-442.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Racioppi, S.; Zurek, E.
+              Looking at High-Pressure Electrides Through the Lens of Quantum Crystallography:
+              The Case of Simple Cubic Calcium.
+              <em>Acta Cryst.</em>, 2025, B81.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Racioppi, S.; Storm, C. V.; McMahon, M. I.; Zurek, E.
+              On the Electride Nature of Na-hP4.
+              <em>Angew. Chem. Int. Ed.</em>, 2023, e202310802.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+          </ul>
+
         </div>
+
       </section>
 
+      <!-- HELIUM -->
+
       <section class="research-item">
+
         <h2 class="research-title">Chemistry of Helium</h2>
+
         <div class="research-description">
+
           <p>
             I investigate how helium, traditionally considered chemically inert, can
             stabilize unexpected compounds and host-guest structures under pressure.
@@ -100,33 +172,73 @@
             materials. These studies provide insight into high-pressure chemistry
             relevant to planetary interiors and advanced materials design.
           </p>
+
+          <ul>
+
+            <li>
+              Weadock, N.; Holle, W.; Myford, K.; Racioppi, S.; Ghimire, A.;
+              Ladd, D.; Park, C.; Zurek, E.; Toney, M.; Bridges, F.; Deemyad, S.
+              Pressure-driven helium insertion for structural stability of
+              CH3NH3PbBr3 hybrid perovskites.
+              <em>Chem. Mater.</em>, 2026.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Racioppi, S.; Miao, M.; Zurek, E.
+              Intercalating Helium into A-site Vacant Perovskites.
+              <em>Chem. Mater.</em>, 2023, 35, 4297-4310.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+          </ul>
+
         </div>
+
       </section>
 
+      <!-- CORE ELECTRONS -->
+
       <section class="research-item">
+
         <h2 class="research-title">Core-electrons Bonding</h2>
+
         <div class="research-description">
+
           <p>
             A central theme of my research is understanding how compression activates
             semicore and core electrons into chemical bonding. Under extreme pressure,
             orbital hierarchies collapse and elements exhibit entirely new chemical
-            behavior. By combining electronic-structure and orbital theory, 
+            behavior. By combining electronic-structure and orbital theory,
             I study how these effects reshape the periodic trends.
           </p>
-            <ul>
-              <li>
-                Racioppi, S.; Zurek, E. Activation of Semicore Electrons in Alkali
-                Metals and Their Role in the B1–B2 Phase Transition under Pressure.
-                <em>J. Am. Chem. Soc.</em>, 2025, 147, 5, 32745-32751.
-                <a href="https://doi.org/10.1021/jacs.5c08582" target="_blank">DOI</a>
-              </li>
+
+          <ul>
+
+            <li>
+              Racioppi, S.; Zurek, E.
+              Activation of Semicore Electrons in Alkali Metals and Their Role
+              in the B1–B2 Phase Transition under Pressure.
+              <em>J. Am. Chem. Soc.</em>, 2025, 147, 5, 32745-32751.
+              <a href="https://doi.org/10.1021/jacs.5c08582" target="_blank">DOI</a>
+            </li>
+
           </ul>
+
         </div>
+
       </section>
 
+      <!-- CSP -->
+
       <section class="research-item">
-        <h2 class="research-title">Experimental Data Assisted Crystal Structure Predictions</h2>
+
+        <h2 class="research-title">
+          Experimental Data Assisted Crystal Structure Predictions
+        </h2>
+
         <div class="research-description">
+
           <p>
             My work bridges theoretical predictions with experimental observations
             obtained under extreme conditions. I collaborate closely with high-pressure
@@ -136,12 +248,38 @@
             validation of theoretical models and accelerates the discovery of novel
             materials at high pressure.
           </p>
+
+          <ul>
+
+            <li>
+              Racioppi, S.; De la Roza, A.; Hajinazar, S.; Zurek, E.
+              Powder X-Ray Diffraction Assisted Evolutionary Algorithm for
+              Crystal Structure Prediction.
+              <em>Digit. Discov.</em>, 2025, 4, 73-83.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Racioppi, S.; Zurek, E.
+              Using Topology to Predict Electrides in the Solid State.
+              <em>J. Phys. Chem. A</em>, 2025, 129, 10031−10038.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+          </ul>
+
         </div>
+
       </section>
 
+      <!-- SUPERCONDUCTIVITY -->
+
       <section class="research-item">
+
         <h2 class="research-title">Superconductivity</h2>
+
         <div class="research-description">
+
           <p>
             I use computational materials design to search for and understand
             superconductors under pressure, with particular interest in pure metals and
@@ -151,20 +289,49 @@
             intuition with predictive simulations, I aim to identify guiding
             principles for next-generation superconducting materials.
           </p>
+
+          <ul>
+
+            <li>
+              Racioppi, S.; Saffarin-Deemyad, I.; Holle, W.; Belli, F.;
+              Ferry, R.; Kenney-Benson, C.; Smith, C. J.; Zurek, E.; Deemyad, S.
+              Lithium's low-temperature phase transitions: Insights into quantum
+              lattice dynamics and superconductivity.
+              <em>Phys. Rev. B</em>, 2025, 111, 054111.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+            <li>
+              Caussé, M.; Bozier, K.; Cooke, P. I. C.; Racioppi, S.;
+              Pickard, C. J.
+              Metastability and high-Tc superconductivity in A15-type ternary hydride
+              YSbH6 at moderate pressure.
+              <em>Phys. Rev. B</em>, 2026.
+              <a href="https://doi.org/" target="_blank">DOI</a>
+            </li>
+
+          </ul>
+
         </div>
+
       </section>
+
     </main>
 
     <footer>
       <p>&copy; 2025 Stefano Racioppi</p>
     </footer>
+
   </div>
 
   <script>
+
     const titles = document.querySelectorAll(".research-title");
 
     titles.forEach(title => {
+
       title.addEventListener("click", () => {
+
         const currentDescription = title.nextElementSibling;
         const isAlreadyOpen = currentDescription.classList.contains("open");
 
@@ -175,8 +342,12 @@
         if (!isAlreadyOpen) {
           currentDescription.classList.add("open");
         }
+
       });
+
     });
+
   </script>
+
 </body>
 </html>
