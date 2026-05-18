@@ -5,30 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research - Stefano Racioppi</title>
   <link rel="stylesheet" href="style.css" />
+
   <style>
     h2, nav a {
       color: #007acc;
     }
+
     section {
       margin-bottom: 2rem;
     }
-    section         <!-- Example figure -->
-        <!-- <img src="assets/img/Pressure.png" alt="Phenomena that occur at pressures ranging from atmospheric conditions (1 atm ∼0.0001 GPa) to those that may be found in the interiors of stars"> -->h2 {
+
+    section h2 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
+
     .research-item {
       margin: 1.5rem 0;
     }
-    .research-item img {
-      max-width: 100%;
-      height: auto;
+
+    .research-title {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .research-title:hover {
+      text-decoration: underline;
+    }
+
+    .research-description {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.4s ease;
+    }
+
+    .research-description.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .research-description p {
       margin-top: 0.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 0;
     }
   </style>
 </head>
+
 <body>
   <div id="container">
     <header>
@@ -37,48 +60,117 @@
           <li><a href="index.html">Home</a></li>
         </ul>
       </nav>
+
       <h1>High-Pressure Chemistry</h1>
     </header>
+
     <main>
       <section>
         <p>
-          My research focuses on condensed matter chemistry and physics under 
+          My research focuses on condensed matter chemistry and physics under
           extreme conditions such as high-pressure and high-temperature.
           Below are some of the main topics I investigate.
         </p>
       </section>
+
       <section class="research-item">
-        <h2>Electrides</h2>
-        <p></p> 
+        <h2 class="research-title">Electrides</h2>
+        <div class="research-description">
+          <p>
+            My research on electrides focuses on understanding how electrons localize
+            in interstitial regions of compressed materials and act as anions.
+            Through studies of sodium, calcium, and related systems under extreme
+            conditions, I developed bonding frameworks based on multicenter
+            interactions that explain the emergence of these unconventional electronic
+            states. This work connects quantum chemistry concepts with the design of
+            functional materials for catalysis, superconductivity, and energy
+            applications.
+          </p>
+        </div>
       </section>
+
       <section class="research-item">
-        <h2>Chemistry of Helium</h2>
-        <p></p>
+        <h2 class="research-title">Chemistry of Helium</h2>
+        <div class="research-description">
+          <p>
+            I investigate how helium, traditionally considered chemically inert, can
+            stabilize unexpected compounds and host-guest structures under pressure.
+            My work explores how helium incorporation modifies bonding,
+            compressibility, and structural stability, leading to new classes of
+            materials inaccessible at ambient conditions. These studies provide
+            insight into high-pressure chemistry relevant to planetary interiors and
+            advanced materials design.
+          </p>
+        </div>
       </section>
+
       <section class="research-item">
-        <h2>Core-electrons Bonding</h2>
-        <p></p>
+        <h2 class="research-title">Core-electrons Bonding</h2>
+        <div class="research-description">
+          <p>
+            A central theme of my research is understanding how compression activates
+            semicore and core electrons into chemical bonding. Under extreme pressure,
+            orbital hierarchies collapse and elements exhibit entirely new chemical
+            behavior. By combining electronic-structure theory and crystal structure
+            prediction, I study how these effects reshape the periodic trends and
+            enable the formation of unusual compounds with exotic bonding motifs.
+          </p>
+        </div>
       </section>
+
       <section class="research-item">
-        <h2>Experimental Data Assisted Crystal Structure Predictions</h2>
-        <p></p>
+        <h2 class="research-title">Experimental Data Assisted Crystal Structure Predictions</h2>
+        <div class="research-description">
+          <p>
+            My work bridges theoretical predictions with experimental observations
+            obtained under extreme conditions. I collaborate closely with high-pressure
+            experimental groups, combining first-principles simulations with
+            diffraction, spectroscopy, and dynamic compression measurements to
+            interpret complex datasets. This integrated approach allows direct
+            validation of theoretical models and accelerates the discovery of novel
+            materials at high pressure.
+          </p>
+        </div>
       </section>
+
       <section class="research-item">
-        <h2>Superconductivity</h2>
-        <p></p>
+        <h2 class="research-title">Superconductivity</h2>
+        <div class="research-description">
+          <p>
+            I use computational materials design to search for and understand
+            superconductors under pressure, with particular interest in hydrogen-rich
+            compounds and unconventional electronic states. My research investigates
+            how bonding, electronic structure, and lattice dynamics cooperate to
+            produce superconductivity at elevated temperatures. By linking chemical
+            intuition with predictive simulations, I aim to identify guiding
+            principles for next-generation superconducting materials.
+          </p>
+        </div>
       </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Stefano Racioppi</p>
     </footer>
   </div>
+
+  <script>
+    const titles = document.querySelectorAll(".research-title");
+
+    titles.forEach(title => {
+      title.addEventListener("click", () => {
+        const currentDescription = title.nextElementSibling;
+        const isAlreadyOpen = currentDescription.classList.contains("open");
+
+        document.querySelectorAll(".research-description").forEach(description => {
+          description.classList.remove("open");
+        });
+
+        if (!isAlreadyOpen) {
+          currentDescription.classList.add("open");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
